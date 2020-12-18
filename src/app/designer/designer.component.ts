@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-designer',
@@ -6,7 +7,17 @@ import { Component, OnInit } from '@angular/core';
   styles: [],
 })
 export class DesignerComponent implements OnInit {
-  constructor() {}
+  public firstFormGroup!: FormGroup;
+  public interiorFormGroup!: FormGroup;
+  constructor(private formBuilder: FormBuilder) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.firstFormGroup = this.formBuilder.group({
+      dataSourceControl: ['', Validators.required],
+    });
+    this.interiorFormGroup = this.formBuilder.group({
+      interiorControl: '',
+      viewControl: [],
+    });
+  }
 }

@@ -1,1 +1,35 @@
-<p>designer works!</p>
+<mat-toolbar color="accent">
+  <h5>Car Designer Step Process</h5>
+</mat-toolbar>
+<mat-horizontal-stepper #stepper="matHorizontalStepper">
+  <mat-step [stepControl]="firstFormGroup">
+    <form [formGroup]="firstFormGroup">
+      <ng-template matStepLabel>Select Car Brand/Model</ng-template>
+      <div class="stepContent">
+        <div fxLayout="row" fxLayout.fxLayout.lt-sm="column" fxLayoutGap="10px">
+          <mat-label>Car Brand/Model</mat-label>
+          <span>TODO: Create Car Brand/Model Dropdown</span>
+        </div>
+        <div fxLayout="row" class="margin-top">
+          <button mat-raised-button matStepperNext color="accent">Next</button>
+        </div>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step [stepControl]="interiorFormGroup">
+    <form [formGroup]="interiorFormGroup">
+      <ng-template matStepLabel>Interior Design</ng-template>
+      <div class="stepContent">
+        <div fxLayout="row" fxLayout.fxLayout.lt-sm="column" fxLayoutGap="10px">
+          <mat-label>TODO: List Selected Car Brand/Model</mat-label>
+        </div>
+        <div fxLayout="row" fxLayout.fxLayout.lt-sm="column" fxLayoutGap="10px">
+          <app-interior></app-interior>
+        </div>
+        <div fxLayout="row" class="margin-top">
+          <button mat-raised-button matStepperNext color="accent">Next</button>
+        </div>
+      </div>
+    </form>
+  </mat-step>
+</mat-horizontal-stepper>

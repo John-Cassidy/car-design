@@ -205,8 +205,8 @@ npx ng g c navigationMenu -m app --lintFix -s -t
 
 3. main design module with steps for:
 
-- select car brand
-- filter step (TBD)
+- select car brand/model
+- query step (TBD)
 - interior design
 - exterior design
 - review selections
@@ -215,4 +215,21 @@ npx ng g m designer -m app --routing
 
 4. step components for design module:
 
+a. designer template has the step control
 npx ng g c designer/designer -m designer --flat -s --lintFix --dry-run
+
+b. interior-design template has the named auxilary router
+npx ng g c designer/interior -m designer -s -t
+
+5. create brandModel modules that will be loaded in the auxilary routes in each step of design module
+   example:
+
+   - the interior step will load the /designer/interior component.
+     - the interior component includes the named router.
+     - oninit event will load the auxiliary route into the named router and selected brandModel module
+       - additional information is passed to the route:
+         - { componentStep: 'interior', selectedBrandModel: 'mazda-miata' }
+     - brandModel module will read the route information and load the correct component into the named auxillary route
+
+npx ng g m miata -m designer --routing
+npx ng g c miata/miata -m miata --flat -s --dry-run

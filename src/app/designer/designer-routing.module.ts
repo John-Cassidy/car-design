@@ -7,6 +7,13 @@ const routes: Routes = [
   {
     path: '',
     component: DesignerComponent,
+    children: [
+      {
+        path: 'miata',
+        outlet: 'interior',
+        loadChildren: () => import('../miata/miata.module').then((m) => m.MiataModule),
+      },
+    ],
   },
 ];
 
