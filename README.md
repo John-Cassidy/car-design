@@ -2,7 +2,7 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.5.
 
-npx @angular/cli new lemon-mart --routing
+npx @angular/cli new car-design --routing
 (select y for strict)
 (select CSS as the stylesheet format)
 
@@ -181,3 +181,19 @@ npx ng g m material --flat -m app
 (2) in app.modules.ts, import FlexLayoutModule so Angular Flex Layout can be activated
 
 (3) append common css to styles.css
+
+### add custom scss stylesheet
+
+Find in the book the url to the Material Color Tool.
+Follow the directions below to generate the stylesheet:
+
+1. pick a color palette using the Material Color tool
+2. add cardesign-theme.scss to project
+3. update angular.json with the new them file name:
+   "styles": ["src/cardesign-theme.scss", "src/styles.css"],
+
+## Commands run during development to create
+
+generate modules based on roles functionality:
+
+npx ng g m manager -m app --routing
