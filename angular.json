@@ -124,5 +124,8 @@
       }
     }
   },
-  "defaultProject": "car-design"
+  "defaultProject": "car-design",
+  "cli": {
+    "analytics": false
+  }
 }
