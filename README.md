@@ -194,6 +194,25 @@ Follow the directions below to generate the stylesheet:
 
 ## Commands run during development to create
 
-generate modules based on roles functionality:
+generate modules based on functionality:
 
-npx ng g m manager -m app --routing
+1. navigation Menu
+
+npx ng g c navigationMenu -m app --lintFix -s -t
+
+2. home component
+   npx ng g c home -m app --inline-style
+
+3. main design module with steps for:
+
+- select car brand
+- filter step (TBD)
+- interior design
+- exterior design
+- review selections
+
+npx ng g m designer -m app --routing
+
+4. step components for design module:
+
+npx ng g c designer/designer -m designer --flat -s --lintFix --dry-run
