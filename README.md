@@ -235,3 +235,8 @@ npx ng g c designer/interior -m designer -s -t
 
 npx ng g m miata -m designer --routing
 npx ng g c miata/miata -m miata --flat -s --dry-run
+
+npx ng g m m2 --routing
+npx ng g c m2/m2 -m m2 --flat -s --dry-run
+
+npx ng g s core/services/car-api/carApi --flat --dry-run

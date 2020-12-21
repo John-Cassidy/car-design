@@ -10,8 +10,11 @@ const routes: Routes = [
     children: [
       {
         path: 'miata',
-        outlet: 'interior',
         loadChildren: () => import('../miata/miata.module').then((m) => m.MiataModule),
+      },
+      {
+        path: 'm2',
+        loadChildren: () => import('../m2/m2.module').then((m) => m.M2Module),
       },
     ],
   },
