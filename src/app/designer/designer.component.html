@@ -42,4 +42,21 @@
       </div>
     </form>
   </mat-step>
+  <mat-step [stepControl]="exteriorFormGroup">
+    <form [formGroup]="exteriorFormGroup">
+      <ng-template matStepLabel>Exterior Design</ng-template>
+      <div class="stepContent">
+        <div fxLayout="row" fxLayout.fxLayout.lt-sm="column" fxLayoutGap="10px">
+          <mat-label>TODO: List Selected Car Brand/Model</mat-label>
+        </div>
+        <div fxLayout="row" fxLayout.fxLayout.lt-sm="column" fxLayoutGap="10px">
+          <app-exterior [selectedCar]="selectedCar"></app-exterior>
+        </div>
+        <div fxLayout="row" class="margin-top">
+          <button mat-raised-button matStepperPrevious>Back</button>
+          <button mat-raised-button matStepperNext color="accent">Next</button>
+        </div>
+      </div>
+    </form>
+  </mat-step>
 </mat-horizontal-stepper>

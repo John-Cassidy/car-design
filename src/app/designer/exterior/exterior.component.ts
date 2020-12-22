@@ -3,11 +3,15 @@ import { Router } from '@angular/router';
 import { Car } from 'src/app/core/models/api.models';
 
 @Component({
-  selector: 'app-interior',
-  templateUrl: './interior.component.html',
+  selector: 'app-exterior',
+  template: `
+    <div class="horizontal-padding" style="border: 1px solid green; width: 100%;">
+      <router-outlet></router-outlet>
+    </div>
+  `,
   styles: [],
 })
-export class InteriorComponent implements OnInit, OnChanges {
+export class ExteriorComponent implements OnInit, OnChanges {
   @Input() selectedCar: Car | null = null;
   constructor(private router: Router) {}
 
@@ -23,7 +27,7 @@ export class InteriorComponent implements OnInit, OnChanges {
       switch (car.model.toLowerCase()) {
         case 'mx5':
           this.router
-            .navigate(['designer/miata/interior'], { skipLocationChange: false })
+            .navigate(['designer/miata/exterior'], { skipLocationChange: false })
             .then((e) => {
               if (e) {
                 console.log('loaded miata module successful');
@@ -34,7 +38,7 @@ export class InteriorComponent implements OnInit, OnChanges {
           break;
         case 'm2':
           this.router
-            .navigate(['designer/m2/interior'], { skipLocationChange: false })
+            .navigate(['designer/m2/exterior'], { skipLocationChange: false })
             .then((e) => {
               if (e) {
                 console.log('loaded m2 module successful');

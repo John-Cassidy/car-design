@@ -2,21 +2,21 @@ import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 
-import { MiataComponent } from './miata.component';
+import { InteriorComponent } from './interior.component';
 
-describe('MiataComponent', () => {
-  let component: MiataComponent;
-  let fixture: ComponentFixture<MiataComponent>;
+describe('InteriorComponent', () => {
+  let component: InteriorComponent;
+  let fixture: ComponentFixture<InteriorComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [MiataComponent],
+      declarations: [InteriorComponent],
       imports: [HttpClientTestingModule, RouterTestingModule],
     }).compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(MiataComponent);
+    fixture = TestBed.createComponent(InteriorComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

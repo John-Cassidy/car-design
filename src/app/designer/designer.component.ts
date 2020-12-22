@@ -13,6 +13,7 @@ import { CarApiService } from '../core/services/car-api/car-api.service';
 export class DesignerComponent implements OnInit, OnDestroy {
   public firstFormGroup!: FormGroup;
   public interiorFormGroup!: FormGroup;
+  public exteriorFormGroup!: FormGroup;
 
   constructor(private formBuilder: FormBuilder, private carApiService: CarApiService) {}
 
@@ -24,6 +25,11 @@ export class DesignerComponent implements OnInit, OnDestroy {
 
     this.interiorFormGroup = this.formBuilder.group({
       interiorControl: '',
+      viewControl: [],
+    });
+
+    this.exteriorFormGroup = this.formBuilder.group({
+      exteriorControl: '',
       viewControl: [],
     });
 

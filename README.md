@@ -240,3 +240,12 @@ npx ng g m m2 --routing
 npx ng g c m2/m2 -m m2 --flat -s --dry-run
 
 npx ng g s core/services/car-api/carApi --flat --dry-run
+
+npx ng g c miata/interior -m miata -s --dry-run
+npx ng g c m2/interior -m m2 -s --dry-run
+
+6. create exterior components in each of the branModel modules (miata, m2)
+
+npx ng g c designer/exterior -m designer -s -t --dry-run
+npx ng g c miata/exterior -m miata -s --dry-run
+npx ng g c m2/exterior -m m2 -s --dry-run
