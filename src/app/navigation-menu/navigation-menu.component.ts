@@ -7,7 +7,10 @@ import { Component, OnInit } from '@angular/core';
       <h3 matSubheader>Home</h3>
       <a mat-list-item routerLinkActive="active-link" routerLink="/home">Home</a>
       <h3 matSubheader>Design</h3>
-      <a mat-list-item routerLinkActive="active-link" routerLink="/designer">Designer</a>
+      <a mat-list-item routerLinkActive="active-link" routerLink="/designer"
+        >Designer (depracated)</a
+      >
+      <a mat-list-item routerLinkActive="active-link" routerLink="/design">Design</a>
     </mat-nav-list>
   `,
   styles: [

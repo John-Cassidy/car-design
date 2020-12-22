@@ -1,0 +1,14 @@
+<h3>Design Your Dream Car</h3>
+<mat-horizontal-stepper (selectionChange)="selectionChanged($event)" [linear]="true">
+  <mat-step *ngFor="let step of steps; let i = index" [routerLink]="step.url"
+    [label]="step.title">
+    <div class="stepContent">
+      <div fxLayout="row" fxLayout.fxLayout.lt-sm="column" fxLayoutGap="10px">
+        <router-outlet *ngIf="i === selectedStepIndex"></router-outlet>
+      </div>
+      <div fxLayout="row" class="margin-top">
+        <button mat-raised-button matStepperNext color="accent">Next</button>
+      </div>
+    </div>
+  </mat-step>
+</mat-horizontal-stepper>

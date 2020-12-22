@@ -15,10 +15,10 @@ export class DesignerComponent implements OnInit, OnDestroy {
   public interiorFormGroup!: FormGroup;
   public exteriorFormGroup!: FormGroup;
 
-  constructor(private formBuilder: FormBuilder, private carApiService: CarApiService) {}
-
   Cars$: Observable<Car[]> | undefined;
   selectedCar: Car | null = null;
+
+  constructor(private formBuilder: FormBuilder, private carApiService: CarApiService) {}
 
   ngOnInit(): void {
     this.buildForm();

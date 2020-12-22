@@ -249,3 +249,14 @@ npx ng g c m2/interior -m m2 -s --dry-run
 npx ng g c designer/exterior -m designer -s -t --dry-run
 npx ng g c miata/exterior -m miata -s --dry-run
 npx ng g c m2/exterior -m m2 -s --dry-run
+
+## Now we are going to create a design module
+
+The design component with a dynamically loading step control.
+The dynamic step includes a router outlet.
+The step will call a function to set the routerLink.
+
+npx ng g m design -m app --routing --dry-run
+
+npx ng g c design/design -m design --flat -s --lintFix --dry-run
+npx ng g c design/brandModel -m design -s --dry-run

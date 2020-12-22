@@ -1,0 +1,11 @@
+<form [formGroup]="formGroup">
+  <mat-form-field appearance="outline" fxFlex="100px">
+    <mat-label>Car Brand/Model</mat-label>
+    <mat-select formControlName="brandModel" (selectionChange)="onCarSelected($event)">
+      <mat-option [value]=""></mat-option>
+      <mat-option *ngFor="let car of (Cars$ | async)" [value]="car">
+        {{ car.brand }}/{{ car.model }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</form>
