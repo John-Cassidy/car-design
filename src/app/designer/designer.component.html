@@ -1,13 +1,14 @@
 <mat-toolbar color="accent">
   <h5>Car Designer Step Process</h5>
 </mat-toolbar>
-<mat-horizontal-stepper #stepper="matHorizontalStepper">
+<mat-horizontal-stepper #stepper="matHorizontalStepper"
+  (selectionChange)="stepperChanged($event)">
   <mat-step [stepControl]="firstFormGroup">
     <form [formGroup]="firstFormGroup">
       <ng-template matStepLabel>Select Car Brand/Model</ng-template>
       <div class="stepContent">
         <div fxLayout="row" fxLayout.fxLayout.lt-sm="column" fxLayoutGap="10px">
-          <mat-form-field appearance="outline" fxFlex="100px">
+          <mat-form-field appearance="outline" fxFlex="200px">
             <mat-label>Car Brand/Model</mat-label>
             <mat-select formControlName="brandModel"
               (selectionChange)="onCarSelected($event)">
@@ -17,33 +18,27 @@
               </mat-option>
             </mat-select>
           </mat-form-field>
-
-        </div>
-        <div fxLayout="row" class="margin-top">
-          <button mat-raised-button matStepperNext color="accent">Next</button>
         </div>
       </div>
     </form>
   </mat-step>
   <mat-step [stepControl]="interiorFormGroup">
-    <form [formGroup]="interiorFormGroup">
+    <ng-template matStepLabel>Interior Design</ng-template>
+    <!-- <form [formGroup]="interiorFormGroup">
       <ng-template matStepLabel>Interior Design</ng-template>
       <div class="stepContent">
         <div fxLayout="row" fxLayout.fxLayout.lt-sm="column" fxLayoutGap="10px">
-          <mat-label>TODO: List Selected Car Brand/Model</mat-label>
+          <mat-label>{{ selectedCar?.brand }}/{{ selectedCar?.model }}</mat-label>
         </div>
         <div fxLayout="row" fxLayout.fxLayout.lt-sm="column" fxLayoutGap="10px">
           <app-interior [selectedCar]="selectedCar"></app-interior>
         </div>
-        <div fxLayout="row" class="margin-top">
-          <button mat-raised-button matStepperPrevious>Back</button>
-          <button mat-raised-button matStepperNext color="accent">Next</button>
-        </div>
       </div>
-    </form>
+    </form> -->
   </mat-step>
   <mat-step [stepControl]="exteriorFormGroup">
-    <form [formGroup]="exteriorFormGroup">
+    <ng-template matStepLabel>Exterior Design</ng-template>
+    <!-- <form [formGroup]="exteriorFormGroup">
       <ng-template matStepLabel>Exterior Design</ng-template>
       <div class="stepContent">
         <div fxLayout="row" fxLayout.fxLayout.lt-sm="column" fxLayoutGap="10px">
@@ -52,11 +47,15 @@
         <div fxLayout="row" fxLayout.fxLayout.lt-sm="column" fxLayoutGap="10px">
           <app-exterior [selectedCar]="selectedCar"></app-exterior>
         </div>
-        <div fxLayout="row" class="margin-top">
-          <button mat-raised-button matStepperPrevious>Back</button>
-          <button mat-raised-button matStepperNext color="accent">Next</button>
-        </div>
       </div>
-    </form>
+    </form> -->
   </mat-step>
 </mat-horizontal-stepper>
+<div *ngIf="showRouter" class="mat-horizontal-content-container">
+  <div fxLayout="row" fxLayout.fxLayout.lt-sm="column" fxLayoutGap="10px">
+    <mat-label>{{ selectedCar?.brand }}/{{ selectedCar?.model }}</mat-label>
+  </div>
+  <div fxLayout="row" fxLayout.fxLayout.lt-sm="column" fxLayoutGap="10px">
+    <router-outlet></router-outlet>
+  </div>
+</div>

@@ -6,11 +6,9 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MaterialModule } from '../material.module';
 import { DesignerRoutingModule } from './designer-routing.module';
 import { DesignerComponent } from './designer.component';
-import { ExteriorComponent } from './exterior/exterior.component';
-import { InteriorComponent } from './interior/interior.component';
 
 @NgModule({
-  declarations: [DesignerComponent, InteriorComponent, ExteriorComponent],
+  declarations: [DesignerComponent],
   imports: [
     CommonModule,
     ReactiveFormsModule,

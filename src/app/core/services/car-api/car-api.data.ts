@@ -40,7 +40,7 @@ export const data: Car[] = [
   {
     id: 'mazda-mx5-2021',
     brand: 'Mazda',
-    model: 'mx5',
+    model: 'Miata',
     year: 2021,
     price: {
       original: 30290,
